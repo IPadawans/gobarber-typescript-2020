@@ -19,7 +19,7 @@ providersRouter.get(
   providerMonthAvailabilityController.index,
 );
 providersRouter.get(
-  '/:provider_id/day-availability',
+  '/:provider_id/da-availability',
   providerDayAvailabilityController.index,
 );
 
