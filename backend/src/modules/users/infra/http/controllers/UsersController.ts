@@ -7,6 +7,7 @@ import UpdateUserAvatarService from '@modules/users/services/UpdateUserAvatarSer
 
 export default class UsersController {
   async create(request: Request, response: Response): Promise<Response> {
+    console.log(request.body);
     const { name, email, password } = request.body;
 
     const createUser = container.resolve(CreateUserService);

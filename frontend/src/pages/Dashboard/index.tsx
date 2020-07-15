@@ -8,6 +8,7 @@ import 'react-day-picker/lib/style.css';
 
 import { FiPower, FiClock } from 'react-icons/fi';
 
+import { Link } from 'react-router-dom';
 import {
   Container,
   Header,
@@ -148,7 +149,9 @@ const Dashboard: React.FC = () => {
             <img src={user.avatar_url} alt={user.name} />
             <div>
               <span>Bem vindo,</span>
-              <strong>{user.name}</strong>
+              <Link to="/profile">
+                <strong>{user.name}</strong>
+              </Link>
             </div>
           </Profile>
 
@@ -169,17 +172,11 @@ const Dashboard: React.FC = () => {
             <NextAppointment>
               <strong>Agendamento a seguir</strong>
               <div>
-                {nextAppointment.user.avatar_url ? (
-                  <img
-                    src={nextAppointment.user.avatar_url}
-                    alt={nextAppointment.user.name}
-                  />
-                ) : (
-                  <img
-                    src="https://i.stack.imgur.com/Hq8za.jpg"
-                    alt={nextAppointment.user.name}
-                  />
-                )}
+                <img
+                  src={nextAppointment.user.avatar_url}
+                  alt={nextAppointment.user.name}
+                />
+
                 <strong>{nextAppointment.user.name}</strong>
                 <span>
                   <FiClock />
@@ -201,18 +198,10 @@ const Dashboard: React.FC = () => {
                   {appointment.hourFormatted}
                 </span>
                 <div>
-                  {appointment.user.avatar_url ? (
-                    <img
-                      src={appointment.user.avatar_url}
-                      alt={appointment.user.name}
-                    />
-                  ) : (
-                    <img
-                      src="https://i.stack.imgur.com/Hq8za.jpg"
-                      alt={appointment.user.name}
-                    />
-                  )}
-
+                  <img
+                    src={appointment.user.avatar_url}
+                    alt={appointment.user.name}
+                  />
                   <strong>{appointment.user.name}</strong>
                 </div>
               </Appointment>
@@ -231,17 +220,11 @@ const Dashboard: React.FC = () => {
                   {appointment.hourFormatted}
                 </span>
                 <div>
-                  {appointment.user.avatar_url ? (
-                    <img
-                      src={appointment.user.avatar_url}
-                      alt={appointment.user.name}
-                    />
-                  ) : (
-                    <img
-                      src="https://i.stack.imgur.com/Hq8za.jpg"
-                      alt={appointment.user.name}
-                    />
-                  )}
+                  <img
+                    src={appointment.user.avatar_url}
+                    alt={appointment.user.name}
+                  />
+
                   <strong>{appointment.user.name}</strong>
                 </div>
               </Appointment>
